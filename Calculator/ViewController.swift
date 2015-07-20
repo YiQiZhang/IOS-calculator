@@ -9,17 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBOutlet weak var calDisplay: UILabel!
+    var isInit: Bool = false
+    
+    @IBAction func appendDigt(sender: UIButton) {
+        let digt = sender.currentTitle!
+        
+        if isInit {
+            calDisplay.text = calDisplay.text! + digt
+        } else {
+            calDisplay.text = digt
+            isInit = true
+        }
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
